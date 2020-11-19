@@ -107,7 +107,6 @@ body {
 
 .comics img {
 	display: block;
-	display: inline-block;
 	width: 100%;
 	border-style: solid;
 	border-width: 3px;
