@@ -71,7 +71,12 @@ body {
 	padding-top: 40px;
 	padding-bottom: 20px;
 }
-
+.gallery p {
+	text-align: left;
+	padding-left: 30px;
+	padding-left: 30px;
+	padding-bottom: 60px;
+}
 .gallery img {
 	width: 100%;
 	margin: auto;
