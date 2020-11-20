@@ -132,6 +132,16 @@ body {
 	
 }
 
-.aboutme p {
+.aboutme {
 	text-align: left;
+}
+.aboutme p {
+	padding: 10px;
+}
+.aboutme ol {
+	padding: 15px;
+	padding-left: 45px;
+}
+.aboutme li {
+	list-style-type: circle;
 }
