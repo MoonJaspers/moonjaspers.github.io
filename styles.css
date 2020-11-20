@@ -35,18 +35,21 @@ body {
 }
 
 .header {
-	padding-top: 20px;
-	padding-bottom: 10px;
+	padding-top: 10px;
 	
 	font-size: 175%;
+}
+.header p {
+    padding-bottom: 20px;
 }
 
 
 .nav {
 	padding-top: 30px;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
+	border-top-style: solid;
 	border-bottom-style: solid;
-	border-bottom-width: 2px;
+	border-width: 2px;
 	border-color: lightgray
 }
 
