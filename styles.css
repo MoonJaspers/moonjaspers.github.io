@@ -44,24 +44,32 @@ body {
 
 .nav {
 	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 	border-bottom-style: solid;
 	border-bottom-width: 2px;
 	border-color: lightgray
 }
 
 .nav a {
-	color: black;
-	text-decoration: none;
+	color: lightgray;
+	text-decoration: none;	
+	
+	border-top-style: solid;
+	border-width: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 .nav a:hover {
-	color: #0f6bdb;
+	color: black;
+
+	border-top-style: solid;
+	border-width: 2px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 .nav li {
 	display: inline;
-	padding-top: 5px;
-	padding-bottom: 5px;
 	
 	font-size: 125%;
 
@@ -69,8 +77,6 @@ body {
 	padding-right: 20px;
 	
 
-	border-style: solid;
-	border-width: 2px;
     margin: 20px;
 }
 
