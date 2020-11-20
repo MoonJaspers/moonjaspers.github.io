@@ -27,6 +27,13 @@ body {
 	font-size: large;
 }
 
+.wrapper img {
+	display: block;
+	width: 50%;
+	position:relative;
+	margin: auto;
+}
+
 
 .header {
 	padding-top: 20px;
