@@ -19,8 +19,8 @@ body {
 
 	max-width: 600px;
 	
-	padding-right: 10px;
-	padding-left:  10px;
+	padding-left: 10px;
+	padding-right: 15px;
 
 	text-align: center;
 	
@@ -124,6 +124,10 @@ body {
 
 
 
+
+.comics {
+	text-align: center;
+}
 
 .comics img {
 	display: block;
