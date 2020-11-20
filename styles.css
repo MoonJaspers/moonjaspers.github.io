@@ -120,7 +120,7 @@ body {
 	margin: auto;
 	border-top-style: solid;
 	border-bottom-style: solid;
-	border-bottom-width: 2px;
+	border-width: 2px;
 	border-color: lightgray
 }
 .gallery a {
