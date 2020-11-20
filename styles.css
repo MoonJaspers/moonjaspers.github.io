@@ -7,6 +7,16 @@
 
 body {
 	background-color: #031429;
+	animation-name: dynamicBg;
+	animation-duration: 40s;
+	animation-iteration-count: infinite;
+}
+@keyframes dynamicBg {
+	0% {background-color: #162030;}
+	40% {background-color: #162030;}
+	50% {background-color: #46628f;}
+	90% {background-color: #46628f;}
+	100% {background-color: #162030;}
 }
 
 .wrapper {
