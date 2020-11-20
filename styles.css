@@ -138,28 +138,29 @@ body {
 	
 	font-size: 200%;
 }
-
 .navcom h2 {
-	color: #ffa733;
-}
-
-.navcom a {
 	color: black;
+}
+.navcom a {
+	color: #ffa733;
 	text-decoration: none;
 }
 .navcom a:hover {
-	color: #ffa733;
+	color: #ffc88a;
 }
-
 .navcom li {
+	color: #ffc88a;
 	display: inline;
 	padding-top: 40px;
 	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
 	
 	font-size: 100%;
-
-	padding-left: 40px;
-	padding-right: 40px;
+}
+.navcom h3 {
+	font-size: 75%;
+	color: #ffc88a;
 }
 
 
