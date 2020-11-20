@@ -41,6 +41,10 @@ body {
 	font-size: 175%;
 }
 
+.header p {
+	font-size: 65%;
+}
+
 
 .nav {
 	padding-top: 30px;
