@@ -132,16 +132,16 @@ body {
 	
 }
 
-.aboutme {
+.frontpage {
 	text-align: left;
 }
-.aboutme p {
+.frontpage p {
 	padding: 10px;
 }
-.aboutme ol {
+.frontpage ol {
 	padding: 15px;
 	padding-left: 45px;
 }
-.aboutme li {
+.frontpage li {
 	list-style-type: circle;
 }
