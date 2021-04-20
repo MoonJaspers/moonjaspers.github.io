@@ -96,6 +96,16 @@ body {
 
 
 
+
+
+
+.comic-gallery {
+	padding-top: 40px;
+	padding-bottom: 20px;
+	text-align: left;
+}
+
+
 .gallery {
 	padding-top: 40px;
 	padding-bottom: 20px;
@@ -195,6 +205,9 @@ body {
 	text-align: left;
 }
 .frontpage p {
+	padding: 5px;
+}
+.frontpage a {
 	padding: 5px;
 }
 .frontpage h2 {
