@@ -99,10 +99,17 @@ body {
 
 
 
-.comic-gallery {
-	padding-top: 40px;
-	padding-bottom: 20px;
+.comic-contents {
 	text-align: left;
+}
+.comic-contents a {
+	color: #ffa733;
+}
+.comic-contents a:hover {
+	color: #ffc88a;
+}
+.comic-contents a:visited {
+	color: gray;
 }
 
 
