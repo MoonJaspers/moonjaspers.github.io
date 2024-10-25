@@ -1,7 +1,7 @@
 const k = kaplay({
     debug: true,
     global: false,
-    scale: 4
+    scale: 1
     // background: 'white'
 });
 
