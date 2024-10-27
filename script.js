@@ -10,6 +10,10 @@ var areasVisited = [
     { name: 'dotnet', value: false },
     { name: 'java', value: false },
     { name: 'python', value: false },
+    { name: 'pettrakr', value: false },
+    { name: 'zombiefortress', value: false },
+    { name: 'terraingeneration', value: false },
+    { name: 'resume', value: false },
     { name: '', value: false },
 ];
 
@@ -34,6 +38,12 @@ k.loadSprite("school", "images/school.jpg");
 k.loadSprite("dotnet", "images/languages/dotnet.png");
 k.loadSprite("java", "images/languages/java.png");
 k.loadSprite("python", "images/languages/python.png");
+// projects
+k.loadSprite("pettrakr", "images/projects/pettrakr.png");
+k.loadSprite("zombiefortress", "images/projects/zombiefortress.jpg");
+k.loadSprite("terraingeneration", "images/projects/terraingeneration.jpg");
+// resume
+k.loadSprite("resume", "images/resume.png");
 
 k.loadSprite("speechBubble", "images/speechbubble.png");
 
@@ -85,6 +95,45 @@ const python = k.add([
     k.anchor("center"),
     k.area( { scale:1.2 } ),
     "python"
+]);
+
+// PROJECTS
+// PetTrakr
+const pettrakr = k.add([
+    k.sprite("pettrakr"),
+    k.scale(0.7),
+    k.pos(k.width() + 400,50),
+    k.anchor("center"),
+    k.area( { scale:1.2 } ),
+    "pettrakr"
+]);
+// Zombie Fortress
+const zombiefortress = k.add([
+    k.sprite("zombiefortress"),
+    k.scale(0.2),
+    k.pos(k.width() + 200,350),
+    k.anchor("center"),
+    k.area( { scale:1.2 } ),
+    "zombiefortress"
+]);
+// Terrain Generation Prototype
+const terraingeneration = k.add([
+    k.sprite("terraingeneration"),
+    k.scale(0.5),
+    k.pos(k.width() + 350,750),
+    k.anchor("center"),
+    k.area( { scale:1.2 } ),
+    "terraingeneration"
+]);
+
+// RESUME
+const resume = k.add([
+    k.sprite("resume"),
+    k.scale(0.5),
+    k.pos(k.width()/2 + 100, k.height() + 250),
+    k.anchor("center"),
+    k.area( { scale:1.2 } ),
+    "resume"
 ]);
 
 
@@ -177,10 +226,41 @@ player.onCollide("python", () => {
     );
     updateAreaVisited(areasVisited, "python", true);
 });
+player.onCollide("pettrakr", () => {
+    setSpeechBubble("PetTrakr\n\n" +
+        "PetTrakr is an android application that I created to help pet owners keep track of their pets"
+    );
+    updateAreaVisited(areasVisited, "pettrakr", true);
+});
+player.onCollide("zombiefortress", () => {
+    setSpeechBubble("Zombie Fortress\n\n" +
+        "Zombie Fortress is a 2D top-down shooter game that I created in Unity. " +
+        "Build a fortress and defend against waves of zombies!"
+    );
+    updateAreaVisited(areasVisited, "zombiefortress", true);
+});
+player.onCollide("terraingeneration", () => {
+    setSpeechBubble("Terrain Generation Prototype\n\n" +
+        "This is a prototype I created to test out procedural terrain generation using the Unity Engine. " +
+        "It uses perlin noise to generate a 2D terrain."
+    );
+    updateAreaVisited(areasVisited, "terraingeneration", true);
+});
+player.onCollide("resume", () => {
+    showResume();
+    updateAreaVisited(areasVisited, "resume", true);
+});
 player.onCollideEnd(() => {
     disableSpeechBubble();
 });
 
+
+function showResume() {
+    window.open("images/jeromegoyena2024Resume.pdf", "_blank");
+}
+
+
+// Update the value of an area in the areasVisited array
 function updateAreaVisited(array, name, value) {
     const item = array.find(item => item.name === name);
     if (item) {
