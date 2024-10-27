@@ -18,17 +18,41 @@ k.setBackground(255,255,255);
 
 k.loadSprite("header", "images/header.png");
 k.loadSprite("player", "images/player.png");
-
+k.loadSprite("school", "images/school.jpg");
+k.loadSprite("speechBubble", "images/speechbubble.png");
 
 // Draw header
 k.onDraw(() => {
-    k.drawSprite({
+    k.drawSprite({ // Header
         sprite: "header",
         pos: k.vec2(
             ((k.width() / 2)-207) - worldPosX,
             4                     - worldPosY
         )
     });
+    // k.drawSprite({ // School
+    //     sprite: "school",
+    //     scale: 0.8,
+    //     pos: k.vec2(
+    //         ((k.width() / 2)-500) - worldPosX,
+    //         -600                  - worldPosY
+    //     )
+    // });
+});
+
+
+const school = k.add([
+    k.sprite("school"),
+    k.scale(0.8),
+    k.pos(k.width() / 2 - 500, -600),
+    k.anchor("center"),
+    k.area({ shape: new k.Rect(k.vec2(0,125), 90, 100) }),
+    "school"
+]);
+
+k.onUpdate(() => {
+    school.pos.x = k.width() / 2 - 500 - worldPosX;
+    school.pos.y = -600 - worldPosY;
 });
 
 
@@ -37,24 +61,49 @@ k.onDraw(() => {
 const player = k.add([
     k.sprite("player"),
     k.scale(0.5),
-    // k.pos(k.width() / 2 - 100, k.height() / 2 - 100)
-    k.pos(k.width() / 2 - 100, 1000)
+    k.pos(k.width() / 2, 1000),
+    k.anchor("center"),
+    k.area({ shape: new k.Rect(k.vec2(0,150), 100, 100) })
+]);
+
+
+// Debug coordinates text
+const debugText = k.add([
+    k.text("X: " + worldPosX + " Y: " + worldPosY, {
+        size: 24,
+        font: "arial",
+        width: k.width()
+    }),
+    k.color(0,0,0),
+    k.pos(10,10)
 ]);
 
 
 var isIntro = true;
 k.onUpdate(() => {
-    // Intro animation of PLAYER
+    // INTRO MODE
+    // (Intro animation of PLAYER)
     if (isIntro) {
-        if (player.pos.y > k.height() / 2 - 100) {
+        if (player.pos.y > k.height() / 2 ) {
             player.move(0, -playerSpeed*2);
         } else {
             startIntro();
             isIntro = false;
             Movement();
         }
+    } else { // NOT INTRO Mode
+        debugText.text = "X: " + worldPosX + " Y: " + worldPosY;
     }
 });
+
+
+player.onCollide("school", () => {
+    setSpeechBubble("Hello World! The Lazy Brown Fox Jumped Over The Red Fence");
+});
+player.onCollideEnd(() => {
+    disableSpeechBubble();
+});
+
 
 
 var introText = null;
@@ -82,7 +131,6 @@ function Movement() {
     k.onKeyDown("left", () => {
         worldPosX -= playerSpeed * k.dt();
         k.destroy(introText);
-        console.log("hi");
     });
     k.onKeyDown("right", () => {
         worldPosX += playerSpeed * k.dt();
@@ -97,3 +145,31 @@ function Movement() {
         k.destroy(introText);
     });
 }
+
+const speechBubble = k.add([
+    k.sprite("speechBubble"),
+    k.scale(0.5),
+    k.anchor("center"),
+    k.pos(k.width()/2, (k.height()/2)-250),
+]);
+speechBubble.hidden = true;
+const speechBubbleText = k.add([
+    k.text("", {
+        size: 24,
+        font: "arial",
+        width: 300
+    }),
+    k.color(0,0,0),
+    k.pos(k.width()/2-140, 60)
+]);
+
+function setSpeechBubble(text) {
+    speechBubble.hidden = false;
+    speechBubbleText.text = text;
+}
+function disableSpeechBubble() {
+    speechBubbleText.text = "";
+    speechBubble.hidden = true;
+}
+
+// setSpeechBubble("Hello World! The Lazy Brown Fox Jumped Over The Red Fence");
