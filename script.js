@@ -46,7 +46,7 @@ const school = k.add([
     k.scale(0.8),
     k.pos(k.width() / 2 - 500, -600),
     k.anchor("center"),
-    k.area({ shape: new k.Rect(k.vec2(0,125), 90, 100) }),
+    k.area( { scale:1.2 } ),
     "school"
 ]);
 
@@ -98,7 +98,11 @@ k.onUpdate(() => {
 
 
 player.onCollide("school", () => {
-    setSpeechBubble("Hello World! The Lazy Brown Fox Jumped Over The Red Fence");
+    setSpeechBubble(
+        "MOHAWK COLLEGE\n\n" +
+        "Software Development (559)\n" +
+        "Sept. 2020 - Current"
+    );
 });
 player.onCollideEnd(() => {
     disableSpeechBubble();
