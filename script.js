@@ -61,7 +61,7 @@ k.onDraw(() => {
 const school = k.add([
     k.sprite("school"),
     k.scale(0.8),
-    k.pos(k.width() / 2 - 500, -600),
+    k.pos(k.width() / 2, -100),
     k.anchor("center"),
     k.area( { scale:1.2 } ),
     "school"
@@ -72,7 +72,7 @@ const school = k.add([
 const dotnet = k.add([
     k.sprite("dotnet"),
     k.scale(0.5),
-    k.pos(-100,100),
+    k.pos(-100,25),
     k.anchor("center"),
     k.area( { scale:1.2 } ),
     "dotnet"
@@ -81,7 +81,7 @@ const dotnet = k.add([
 const java = k.add([
     k.sprite("java"),
     k.scale(0.1),
-    k.pos(-200,300),
+    k.pos(-200,280),
     k.anchor("center"),
     k.area( { scale:1.2 } ),
     "java"
@@ -90,7 +90,7 @@ const java = k.add([
 const python = k.add([
     k.sprite("python"),
     k.scale(0.2),
-    k.pos(-50,500),
+    k.pos(-50,550),
     k.anchor("center"),
     k.area( { scale:1.2 } ),
     "python"
@@ -101,7 +101,7 @@ const python = k.add([
 const pettrakr = k.add([
     k.sprite("pettrakr"),
     k.scale(0.7),
-    k.pos(k.width() + 400,50),
+    k.pos(k.width() + 200,-150),
     k.anchor("center"),
     k.area( { scale:1.2 } ),
     "pettrakr"
@@ -129,7 +129,7 @@ const terraingeneration = k.add([
 const resume = k.add([
     k.sprite("resume"),
     k.scale(0.5),
-    k.pos(k.width()/2 + 100, k.height() + 250),
+    k.pos(k.width()/2 + 300, -300),
     k.anchor("center"),
     k.area( { scale:1.2 } ),
     "resume"
