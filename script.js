@@ -13,8 +13,7 @@ var areasVisited = [
     { name: 'pettrakr', value: false },
     { name: 'zombiefortress', value: false },
     { name: 'terraingeneration', value: false },
-    { name: 'resume', value: false },
-    { name: '', value: false },
+    { name: 'resume', value: false }
 ];
 
 
@@ -183,6 +182,10 @@ k.onUpdate(() => {
         for (let i = 0; i < areasVisited.length; i++) { 
             if (areasVisited[i].value == true) {
                 counter++;
+            }
+            if (counter >= areasVisited.length) {
+                // All areas visited
+                window.location.href = "contactme.html";
             }
         }
         debugText.text = "Areas Visited: " + counter + "/" + areasVisited.length;
